@@ -10,7 +10,6 @@ class tontine extends Model
     use HasFactory;
 
     protected $fillable = [
-        "dateCotisation",
         "montant",
         "commentaire",
         "idGest",

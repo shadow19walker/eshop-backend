@@ -10,7 +10,6 @@ class paieInfluenceur extends Model
     use HasFactory;
 
     protected $fillable = [
-        "datePaie",
         "montant",
         "idInf",
         "validite",

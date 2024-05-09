@@ -13,7 +13,6 @@ class ligneCarte extends Model
         "idFac",
         "idCarte",
         "point",
-        "dateOpera",
         "montantFac",
     ];
 

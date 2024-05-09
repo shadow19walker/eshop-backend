@@ -17,7 +17,6 @@ class produit extends Model
         "codeArrivage",
         "actif",
         "idCategorie",
-        "dateInsertion",
         "prixAchat",
         "pourcentage",
         "promo",

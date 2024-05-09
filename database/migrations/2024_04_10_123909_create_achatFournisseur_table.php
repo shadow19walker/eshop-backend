@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('achatFournisseur', function (Blueprint $table) {
             $table->integer("idAchat",true,true);
             $table->string("lienFac",250);
-            $table->dateTime("dateInsertion");
+            $table->timestamp("dateInsertion");
             $table->decimal("montantFac",10,2);
             $table->decimal("montantCargo",10,2);
             $table->decimal("totalKg",8,2);

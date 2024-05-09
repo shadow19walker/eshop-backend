@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('paieInfluenceur', function (Blueprint $table) {
             $table->integer("idPaiement",true,true);
-            $table->dateTime("datePaie");
+            $table->timestamp("datePaie");
             $table->decimal("montant",10,2);
             $table->integer("idInf",unsigned: true);
             $table->tinyInteger("validite");

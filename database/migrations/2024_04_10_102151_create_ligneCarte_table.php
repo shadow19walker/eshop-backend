@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer("idFac",unsigned: true);
             $table->integer("idCarte",unsigned: true);
             $table->integer("point",unsigned: true);
-            $table->dateTime("dateOpera");
+            $table->timestamp("dateOpera");
             $table->decimal("montantFac",10,2);
         });
     }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("codeArrivage",250);
             $table->tinyInteger("actif");
             $table->integer("idCategorie",unsigned: true);
-            $table->dateTime("dateInsertion");
+            $table->timestamp("dateInsertion");
             $table->decimal("prixAchat",8,0);
             $table->decimal("pourcentage",2,2);
             $table->tinyInteger("promo");

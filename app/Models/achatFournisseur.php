@@ -11,7 +11,6 @@ class achatFournisseur extends Model
 
     protected $fillable = [
         "lienFac",
-        "dateInsertion",
         "montantFac",
         "montantCargo",
         "totalKg",

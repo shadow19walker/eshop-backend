@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer("idmsg",true,true);
             $table->string("mobile",20);
             $table->text("wsms");
-            $table->dateTime("dateEnvoie");
+            $table->timestamp("dateEnvoie");
             $table->integer("type");
             $table->integer("service");
         });

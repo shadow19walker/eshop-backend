@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer("matr",true,true);
             $table->string("nom",80);
             $table->tinyInteger("sexe");
-            $table->string("dateNaiss",10);
+            $table->date("dateNaiss",10);
             $table->integer("idVille",unsigned: true);
             $table->string("mobile",15);
             $table->tinyInteger("whatsapp");

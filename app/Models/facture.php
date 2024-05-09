@@ -10,7 +10,6 @@ class facture extends Model
     use HasFactory;
 
     protected $fillable = [
-        "dateFac",
         "remise",
         "tel",
         "typeFac",

@@ -12,7 +12,6 @@ class messagerie extends Model
     protected $fillable = [
         "mobile",
         "wsms",
-        "dateEnvoie",
         "type",
         "service",
     ];

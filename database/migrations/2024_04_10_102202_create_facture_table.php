@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('facture', function (Blueprint $table) {
             $table->integer("idFac",true,true);
-            $table->dateTime("dateFac");
+            $table->timestamp("dateFac");
             $table->decimal("remise",4,2);
             $table->string("tel",15);
             $table->smallInteger("typeFac",unsigned: true);

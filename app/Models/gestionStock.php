@@ -11,7 +11,6 @@ class gestionStock extends Model
 
     protected $fillable = [
         "qte",
-        "dateStock",
         "operation",
         "idGest",
         "codePro",

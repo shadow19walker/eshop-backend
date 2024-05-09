@@ -16,7 +16,6 @@ class fournisseur extends Model
         "pays",
         "mobile1",
         "mobile2",
-        "dateCreation",
         "type",
     ];
 
