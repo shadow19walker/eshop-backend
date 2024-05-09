@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class expedition extends Model
 {
     use HasFactory;
+    public $fillable = [
+        "idVille",
+        "transporteur",
+        "prix",
+        "mobile1",
+        "mobile2",
+    ];
 }

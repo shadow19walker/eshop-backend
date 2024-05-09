@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class messagerie extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "mobile",
+        "wsms",
+        "dateEnvoie",
+        "type",
+        "service",
+    ];
 }

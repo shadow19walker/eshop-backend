@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class influenceur extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "nom",
+        "mobile",
+        "codePromo",
+        "actif",
+        "montant",
+        "string",
+    ];
 }

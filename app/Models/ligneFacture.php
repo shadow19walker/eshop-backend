@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ligneFacture extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "idFac",
+        "codePro",
+        "prix",
+        "qte",
+    ];
 }

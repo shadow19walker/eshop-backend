@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class gestionStock extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "qte",
+        "dateStock",
+        "operation",
+        "idGest",
+        "codePro",
+    ];
 }

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ligneCommande extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "idCommande",
+        "codePro",
+        "quantite",
+        "taille",
+        "couleur",
+        "disponible",
+    ];
 }

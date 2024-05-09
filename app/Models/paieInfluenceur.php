@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class paieInfluenceur extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "datePaie",
+        "montant",
+        "idInf",
+        "validite",
+        "commentaire",
+    ];
 }

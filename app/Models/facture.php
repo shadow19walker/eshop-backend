@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class facture extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "dateFac",
+        "remise",
+        "tel",
+        "typeFac",
+        "idCaissiere",
+        "capital",
+        "tva",
+        "codePromo",
+    ];
 }

@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class achatFournisseur extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "lienFac",
+        "dateInsertion",
+        "montantFac",
+        "montantCargo",
+        "totalKg",
+        "montantGlobal",
+        "idFour",
+        "idCargo",
+    ];
 }
