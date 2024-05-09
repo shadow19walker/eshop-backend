@@ -11,4 +11,9 @@ class categorie extends Model
     protected $fillable = [
         "nomCat"
     ];
+
+    public function produits()
+    {
+        return $this->hasMany(produit::class);
+    }
 }

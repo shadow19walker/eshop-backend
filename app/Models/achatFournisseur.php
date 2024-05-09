@@ -19,4 +19,9 @@ class achatFournisseur extends Model
         "idFour",
         "idCargo",
     ];
+
+    public function fournisseur()
+    {
+        return $this->hasOne(fournisseur::class);
+    }
 }

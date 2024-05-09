@@ -17,4 +17,19 @@ class gestionnaire extends Model
         "actif",
         "mobile",
     ];
+
+    public function gestionstocks()
+    {
+        return $this->hasMany(gestionStock::class);
+    }
+
+    public function factures()
+    {
+        return $this->hasMany(facture::class);
+    }
+
+    public function tontines()
+    {
+        return $this->hasMany(tontine::class);
+    }
 }

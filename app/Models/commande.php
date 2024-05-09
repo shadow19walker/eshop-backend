@@ -20,4 +20,14 @@ class commande extends Model
         "type",
         "idVille",
     ];
+
+    public function ville()
+    {
+        return $this->hasOne(ville::class);
+    }
+
+    public function lignecommande()
+    {
+        return $this->hasMany(ligneCommande::class);
+    }
 }

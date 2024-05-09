@@ -19,4 +19,18 @@ class clientCarte extends Model
         "point",
         "montantTontine",
     ];
+
+    public function tontines()
+    {
+        return $this->hasMany(tontine::class);
+    }
+
+    public function lignecartes()
+    {
+        return $this->hasMany(ligneCarte::class);
+    }
+    public function ville()
+    {
+        return $this->hasOne(ville::class);
+    }
 }

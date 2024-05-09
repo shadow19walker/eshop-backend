@@ -16,4 +16,9 @@ class paieInfluenceur extends Model
         "validite",
         "commentaire",
     ];
+
+    public function influenceur()
+    {
+        return $this->hasOne(influenceur::class);
+    }
 }

@@ -16,4 +16,15 @@ class ligneCarte extends Model
         "dateOpera",
         "montantFac",
     ];
+
+    public function clientcarte()
+    {
+        return $this->hasOne(clientCarte::class);
+    }
+
+    public function facture()
+    {
+        return $this->hasOne(facture::class);
+    }
+
 }

@@ -19,4 +19,9 @@ class fournisseur extends Model
         "dateCreation",
         "type",
     ];
+
+    public function achatfournisseurs()
+    {
+        return $this->hasMany(achatFournisseur::class);
+    }
 }

@@ -13,4 +13,9 @@ class photo extends Model
         "lienPhoto",
         "codePro",
     ];
+
+    public function produit()
+    {
+        return $this->hasOne(produit::class);
+    }
 }

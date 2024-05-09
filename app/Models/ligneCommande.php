@@ -17,4 +17,14 @@ class ligneCommande extends Model
         "couleur",
         "disponible",
     ];
+
+    public function commade()
+    {
+        return $this->hasOne(produit::class);
+    }
+
+    public function produit()
+    {
+        return $this->hasOne(produit::class);
+    }
 }

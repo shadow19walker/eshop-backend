@@ -16,4 +16,14 @@ class gestionStock extends Model
         "idGest",
         "codePro",
     ];
+
+    public function gestionnaire()
+    {
+        return $this->hasOne(gestionnaire::class);
+    }
+
+    public function produit()
+    {
+        return $this->hasOne(produit::class);
+    }
 }

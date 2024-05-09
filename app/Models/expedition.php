@@ -15,4 +15,9 @@ class expedition extends Model
         "mobile1",
         "mobile2",
     ];
+
+    public function ville()
+    {
+        return $this->hasOne(ville::class);
+    }
 }

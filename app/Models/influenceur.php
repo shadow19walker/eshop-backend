@@ -17,4 +17,9 @@ class influenceur extends Model
         "montant",
         "string",
     ];
+
+    public function paieinfluenceurs()
+    {
+        return $this->hasMany(paieInfluenceur::class);
+    }
 }

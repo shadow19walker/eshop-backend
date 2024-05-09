@@ -15,4 +15,14 @@ class ligneFacture extends Model
         "prix",
         "qte",
     ];
+
+    public function facture()
+    {
+        return $this->hasOne(facture::class);
+    }
+
+    public function produit()
+    {
+        return $this->hasOne(produit::class);
+    }
 }

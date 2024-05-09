@@ -19,4 +19,18 @@ class facture extends Model
         "tva",
         "codePromo",
     ];
+
+    public function gestionnaire()
+    {
+        return $this->hasOne(gestionnaire::class);
+    }
+
+    public function lignecartes()
+    {
+        return $this->hasMany(ligneCarte::class);
+    }
+    public function lignefactures()
+    {
+        return $this->hasMany(ligneFacture::class);
+    }
 }

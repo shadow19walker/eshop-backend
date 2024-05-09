@@ -18,4 +18,14 @@ class tontine extends Model
         "idCarte",
         "action"
     ];
+
+    public function gestionnaire()
+    {
+        return $this->hasOne(gestionnaire::class);
+    }
+
+    public function cliencarte()
+    {
+        return $this->hasOne(clientCarte::class);
+    }
 }

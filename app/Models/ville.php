@@ -12,4 +12,19 @@ class ville extends Model
     protected $fillable = [
         "libelle"
     ];
+
+    public function cliencartes()
+    {
+        return $this->hasMany(clientCarte::class);
+    }
+
+    public function commande()
+    {
+        $this->hasMany(commande::class);
+    }
+
+    public function expeditions()
+    {
+        return $this->hasMany(expedition::class);
+    }
 }
