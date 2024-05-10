@@ -9,6 +9,8 @@ class ligneCommande extends Model
 {
     use HasFactory;
 
+    protected $table = 'ligneCommande';
+
     protected $fillable = [
         "idCommande",
         "codePro",

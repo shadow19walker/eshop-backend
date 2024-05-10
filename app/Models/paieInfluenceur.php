@@ -9,6 +9,8 @@ class paieInfluenceur extends Model
 {
     use HasFactory;
 
+    protected $table = 'paieInfluenceur';
+
     protected $fillable = [
         "montant",
         "idInf",

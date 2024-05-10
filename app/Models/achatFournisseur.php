@@ -9,6 +9,8 @@ class achatFournisseur extends Model
 {
     use HasFactory;
 
+    protected $table = 'achatFournisseur';
+
     protected $fillable = [
         "lienFac",
         "montantFac",

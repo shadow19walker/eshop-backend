@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class clientCarte extends Model
 {
     use HasFactory;
+
+    protected $table = 'clientCarte';
+
     protected $fillable =[
         "nom",
         "sexe",

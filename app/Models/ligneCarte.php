@@ -9,6 +9,8 @@ class ligneCarte extends Model
 {
     use HasFactory;
 
+    protected $table = 'ligneCarte';
+
     protected $fillable = [
         "idFac",
         "idCarte",

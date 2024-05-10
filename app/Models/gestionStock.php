@@ -9,6 +9,8 @@ class gestionStock extends Model
 {
     use HasFactory;
 
+    protected $table = 'gestionStock';
+
     protected $fillable = [
         "qte",
         "operation",

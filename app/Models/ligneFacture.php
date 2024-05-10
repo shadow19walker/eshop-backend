@@ -9,6 +9,8 @@ class ligneFacture extends Model
 {
     use HasFactory;
 
+    protected $table = 'ligneFacture';
+
     protected $fillable = [
         "idFac",
         "codePro",
