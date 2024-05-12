@@ -11,6 +11,11 @@ class gestionStock extends Model
 
     protected $table = 'gestionStock';
 
+    protected $primaryKey = 'idStock';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         "qte",
         "operation",
@@ -20,11 +25,11 @@ class gestionStock extends Model
 
     public function gestionnaire()
     {
-        return $this->hasOne(gestionnaire::class);
+        return $this->belongsTo(gestionnaire::class,'idGest');
     }
 
     public function produit()
     {
-        return $this->hasOne(produit::class);
+        return $this->hasOne(produit::class,'codePro');
     }
 }

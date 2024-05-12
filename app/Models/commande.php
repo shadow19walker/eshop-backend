@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class commande extends Model
 {
     use HasFactory;
+
+    protected $table = 'commande';
+
+    protected $primaryKey = 'idCommande';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "montant",
         "nomClient",
@@ -23,11 +30,11 @@ class commande extends Model
 
     public function ville()
     {
-        return $this->hasOne(ville::class);
+        return $this->belongsTo(ville::class,'idVille');
     }
 
     public function lignecommande()
     {
-        return $this->hasMany(ligneCommande::class);
+        return $this->hasMany(ligneCommande::class,'idCommande');
     }
 }

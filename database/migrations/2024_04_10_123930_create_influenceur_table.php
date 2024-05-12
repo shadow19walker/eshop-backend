@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("codePromo",20);
             $table->tinyInteger("actif");
             $table->decimal("montant",10,2);
-            $table->string("string",30);
+            $table->string("pwd",30);
         });
     }
 

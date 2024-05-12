@@ -9,6 +9,12 @@ class messagerie extends Model
 {
     use HasFactory;
 
+    protected $table = 'messagerie';
+
+    protected $primaryKey = 'idmsg';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "mobile",
         "wsms",

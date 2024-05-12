@@ -9,8 +9,14 @@ class produit extends Model
 {
     use HasFactory;
 
+    protected $table = 'produit';
+
+    protected $primaryKey = 'codePro';
+
+    public $timestamps = false;
+
     protected $fillable = [
-        "nompro",
+        "nomPro",
         "prix",
         "qte",
         "description",
@@ -27,27 +33,27 @@ class produit extends Model
 
     public function categorie()
     {
-        return $this->hasOne(categorie::class);
+        return $this->belongsTo(categorie::class, 'idCategorie');
     }
 
     public function gestionstocks()
     {
-        return $this->hasMany(gestionStock::class);
+        return $this->hasMany(gestionStock::class,'codePro');
     }
 
     public function lignecommandes()
     {
-        return $this->hasMany(ligneCommande::class);
+        return $this->hasMany(ligneCommande::class,'codePro');
     }
 
     public function lignefactures()
     {
-        return $this->hasMany(ligneFacture::class);
+        return $this->hasMany(ligneFacture::class,'codePro');
     }
 
     public function photos()
     {
-        return $this->hasMany(photo::class);
+        return $this->hasMany(photo::class,'codePro');
     }
 }
 

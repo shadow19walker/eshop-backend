@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('facture', function (Blueprint $table) {
             $table->integer("idFac",true,true);
-            $table->timestamp("dateFac");
-            $table->decimal("remise",4,2);
+            $table->dateTime("dateFac")->default(now());
+            $table->decimal("remise",4,2)->default(0);
             $table->string("tel",15);
             $table->smallInteger("typeFac",unsigned: true);
             $table->integer("idCaissiere",unsigned: true);
             $table->decimal("capital",10,2);
             $table->decimal("tva",10,2);
-            $table->string("codePromo",15);
+            $table->string("codePromo",15)->nullable();
         });
     }
 

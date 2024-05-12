@@ -12,7 +12,7 @@ class LignefactureController extends Controller
      */
     public function index()
     {
-        //
+        return ligneFacture::with(['facture','produit'])->get();
     }
 
     /**
@@ -20,30 +20,55 @@ class LignefactureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fields = $request->validate([
+            "idFac" => 'required|integer|exists:facture,idFac',
+            "codePro" => 'required|integer|exists:produit,codePro',
+            "prix" => 'required|numeric|decimal:10,2',
+            "qte" => 'required|numeric',
+        ]);
+
+        return response()->json(ligneFacture::create($fields),201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(ligneFacture $ligneFacture)
+    public function show($idLFac)
     {
-        //
+        return ligneFacture::with(['facture','produit'])->findOrFail($idLFac);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ligneFacture $ligneFacture)
+    public function update($idLFac, Request $request)
     {
-        //
+        $lignefacture = ligneFacture::findOrFail($idLFac);
+
+        $fields = $request->validate([
+            "idFac" => 'sometimes|integer|exists:facture,idFac',
+            "codePro" => 'sometimes|integer|exists:produit,codePro',
+            "prix" => 'sometimes|numeric|decimal:10,2',
+            "qte" => 'sometimes|numeric',
+        ]);
+
+        $lignefacture -> update($fields);
+
+        return $lignefacture;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ligneFacture $ligneFacture)
+    public function destroy($idLFac)
     {
-        //
+        try {
+            ligneFacture::destroy($idLFac);
+
+            return \response()->json(null,204);
+        }catch (\Exception $e) {
+            // En cas d'erreur, renvoyer un code de statut 400 Bad Request avec un message d'erreur
+            return response()->json(['message' => 'Failed to delete resource'], 400);
+        }
     }
 }

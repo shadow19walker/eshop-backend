@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("pays",50);
             $table->string("mobile1",20);
             $table->string("mobile2",20);
-            $table->timestamp("dateCreation");
+            $table->dateTime("dateCreation")->default(now());
             $table->tinyInteger("type");
         });
     }

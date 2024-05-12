@@ -11,6 +11,10 @@ class ligneCarte extends Model
 
     protected $table = 'ligneCarte';
 
+    protected $primaryKey = 'id';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "idFac",
         "idCarte",
@@ -20,12 +24,12 @@ class ligneCarte extends Model
 
     public function clientcarte()
     {
-        return $this->hasOne(clientCarte::class);
+        return $this->hasOne(clientCarte::class,'idCarte');
     }
 
     public function facture()
     {
-        return $this->hasOne(facture::class);
+        return $this->hasOne(facture::class,'idFac');
     }
 
 }

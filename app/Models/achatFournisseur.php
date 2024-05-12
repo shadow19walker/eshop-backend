@@ -10,6 +10,8 @@ class achatFournisseur extends Model
     use HasFactory;
 
     protected $table = 'achatFournisseur';
+    protected $primaryKey = 'idFour';
+    public $timestamps = false;
 
     protected $fillable = [
         "lienFac",
@@ -23,6 +25,6 @@ class achatFournisseur extends Model
 
     public function fournisseur()
     {
-        return $this->hasOne(fournisseur::class);
+        return $this->belongsTo(fournisseur::class,'idFour');
     }
 }

@@ -9,6 +9,13 @@ class tontine extends Model
 {
     use HasFactory;
 
+    protected $table = 'tontine';
+
+    protected $primaryKey = 'idTontine';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         "montant",
         "commentaire",
@@ -20,11 +27,11 @@ class tontine extends Model
 
     public function gestionnaire()
     {
-        return $this->hasOne(gestionnaire::class);
+        return $this->belongsTo(gestionnaire::class,'idGest');
     }
 
     public function cliencarte()
     {
-        return $this->hasOne(clientCarte::class);
+        return $this->belongsTo(clientCarte::class,'idCarte');
     }
 }

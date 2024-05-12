@@ -9,6 +9,12 @@ class facture extends Model
 {
     use HasFactory;
 
+    protected $table = 'facture';
+
+    protected $primaryKey = 'idFac';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "remise",
         "tel",
@@ -21,15 +27,15 @@ class facture extends Model
 
     public function gestionnaire()
     {
-        return $this->hasOne(gestionnaire::class);
+        return $this->belongsTo(gestionnaire::class, 'idCaissiere');
     }
 
     public function lignecartes()
     {
-        return $this->hasMany(ligneCarte::class);
+        return $this->hasMany(ligneCarte::class,'idFac');
     }
     public function lignefactures()
     {
-        return $this->hasMany(ligneFacture::class);
+        return $this->hasMany(ligneFacture::class,'idFac');
     }
 }

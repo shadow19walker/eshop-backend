@@ -9,17 +9,24 @@ class influenceur extends Model
 {
     use HasFactory;
 
+    protected $table = 'influenceur';
+
+    protected $primaryKey = 'idInf';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         "nom",
         "mobile",
         "codePromo",
         "actif",
         "montant",
-        "string",
+        "pwd",
     ];
 
     public function paieinfluenceurs()
     {
-        return $this->hasMany(paieInfluenceur::class);
+        return $this->hasMany(paieInfluenceur::class,'idInf');
     }
 }

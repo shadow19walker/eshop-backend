@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class expedition extends Model
 {
     use HasFactory;
+
+    protected $table = 'expedition';
+
+    protected $primaryKey = 'idExp';
+
+    public $timestamps = false;
+
     public $fillable = [
         "idVille",
         "transporteur",
@@ -18,6 +25,6 @@ class expedition extends Model
 
     public function ville()
     {
-        return $this->hasOne(ville::class);
+        return $this->belongsTo(ville::class, 'idVille');
     }
 }

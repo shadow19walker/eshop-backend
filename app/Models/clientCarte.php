@@ -11,6 +11,10 @@ class clientCarte extends Model
 
     protected $table = 'clientCarte';
 
+    protected $primaryKey = 'matr';
+
+    public $timestamps = false;
+
     protected $fillable =[
         "nom",
         "sexe",
@@ -18,22 +22,21 @@ class clientCarte extends Model
         "idVille",
         "mobile",
         "whatsapp",
-        "creation",
         "point",
         "montantTontine",
     ];
 
     public function tontines()
     {
-        return $this->hasMany(tontine::class);
+        return $this->hasMany(tontine::class,'idCarte');
     }
 
     public function lignecartes()
     {
-        return $this->hasMany(ligneCarte::class);
+        return $this->hasMany(ligneCarte::class,'idCarte');
     }
     public function ville()
     {
-        return $this->hasOne(ville::class);
+        return $this->belongsTo(ville::class,'idVille');
     }
 }

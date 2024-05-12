@@ -11,6 +11,11 @@ class paieInfluenceur extends Model
 
     protected $table = 'paieInfluenceur';
 
+    protected $primaryKey = 'idPaiement';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         "montant",
         "idInf",
@@ -20,6 +25,6 @@ class paieInfluenceur extends Model
 
     public function influenceur()
     {
-        return $this->hasOne(influenceur::class);
+        return $this->belongsTo(influenceur::class,'idInf');
     }
 }

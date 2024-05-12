@@ -9,6 +9,12 @@ class fournisseur extends Model
 {
     use HasFactory;
 
+    protected $table = 'fournisseur';
+
+    protected $primaryKey = 'idFour';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "nom",
         "adresse",
@@ -21,6 +27,6 @@ class fournisseur extends Model
 
     public function achatfournisseurs()
     {
-        return $this->hasMany(achatFournisseur::class);
+        return $this->hasMany(achatFournisseur::class,'idFour');
     }
 }

@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('produit', function (Blueprint $table) {
             $table->integer("codePro",true,true);
-            $table->string("nompro",100);
+            $table->string("nomPro",100);
             $table->decimal("prix",8,0);
             $table->integer("qte",unsigned: true);
             $table->string("description",100);
             $table->string("codeArrivage",250);
             $table->tinyInteger("actif");
             $table->integer("idCategorie",unsigned: true);
-            $table->timestamp("dateInsertion");
+            $table->dateTime("dateInsertion")->default(now());
             $table->decimal("prixAchat",8,0);
             $table->decimal("pourcentage",2,2);
             $table->tinyInteger("promo");

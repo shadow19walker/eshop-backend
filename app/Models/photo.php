@@ -9,6 +9,12 @@ class photo extends Model
 {
     use HasFactory;
 
+    protected $table = 'photo';
+
+    protected $primaryKey = 'idPhoto';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "lienPhoto",
         "codePro",
@@ -16,6 +22,6 @@ class photo extends Model
 
     public function produit()
     {
-        return $this->hasOne(produit::class);
+        return $this->belongsTo(produit::class,'codePro');
     }
 }

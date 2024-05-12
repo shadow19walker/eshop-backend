@@ -11,6 +11,10 @@ class ligneFacture extends Model
 
     protected $table = 'ligneFacture';
 
+    protected $primaryKey = 'idLFac';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "idFac",
         "codePro",
@@ -20,11 +24,11 @@ class ligneFacture extends Model
 
     public function facture()
     {
-        return $this->hasOne(facture::class);
+        return $this->belongsTo(facture::class,'idFac');
     }
 
     public function produit()
     {
-        return $this->hasOne(produit::class);
+        return $this->belongsTo(produit::class,'codePro');
     }
 }

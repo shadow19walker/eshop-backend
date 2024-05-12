@@ -95,14 +95,16 @@ return new class extends Migration
             $table
                 ->foreign("idCategorie")
                 ->references("idCat")->on("categorie")
-                ->onUpdate("cascade");
+                ->onUpdate("cascade")
+                ->cascadeOnDelete();
         });
 
         Schema::table("photo", function (Blueprint $table){
             $table
                 ->foreign("codePro")
                 ->references("codePro")->on("produit")
-                ->onUpdate("cascade");
+                ->onUpdate("cascade")
+                ->cascadeOnDelete();
         });
 
         Schema::table("achatFournisseur", function (Blueprint $table){

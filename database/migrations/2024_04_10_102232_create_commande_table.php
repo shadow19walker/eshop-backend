@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('commande', function (Blueprint $table) {
-            $table->timestamp("dateCom");
+            $table->timestamp("dateCom")->default(now());
             $table->integer("idCommande",true,true);
             $table->decimal("montant",unsigned: true);
             $table->string("nomClient",50);

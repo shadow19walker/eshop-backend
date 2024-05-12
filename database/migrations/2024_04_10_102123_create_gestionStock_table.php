@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('gestionStock', function (Blueprint $table) {
             $table->integer("idStock",true,true);
             $table->integer("qte",unsigned: true);
-            $table->timestamp("dateStock");
+            $table->dateTime("dateStock")->default(now());
             $table->tinyInteger("operation");
             $table->integer("idGest",unsigned: true);
             $table->integer("codePro",unsigned: true);

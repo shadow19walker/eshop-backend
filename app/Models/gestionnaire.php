@@ -9,6 +9,13 @@ class gestionnaire extends Model
 {
     use HasFactory;
 
+    protected $table = 'gestionnaire';
+
+    protected $primaryKey = 'idGest';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         "nomGest",
         "typeGest",
@@ -20,16 +27,16 @@ class gestionnaire extends Model
 
     public function gestionstocks()
     {
-        return $this->hasMany(gestionStock::class);
+        return $this->hasMany(gestionStock::class, 'idGest');
     }
 
     public function factures()
     {
-        return $this->hasMany(facture::class);
+        return $this->hasMany(facture::class,'idCaissiere');
     }
 
     public function tontines()
     {
-        return $this->hasMany(tontine::class);
+        return $this->hasMany(tontine::class,'idGest');
     }
 }

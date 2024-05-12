@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tontine', function (Blueprint $table) {
             $table->integer("idTontine",true,true);
-            $table->timestamp("dateCotisation");
+            $table->dateTime("dateCotisation")->default(now());
             $table->decimal("montant",10,2);
             $table->text("commentaire");
             $table->integer("idGest",unsigned: true);

@@ -11,6 +11,10 @@ class ligneCommande extends Model
 
     protected $table = 'ligneCommande';
 
+    protected $primaryKey = 'idLigneCom';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "idCommande",
         "codePro",
@@ -22,11 +26,11 @@ class ligneCommande extends Model
 
     public function commade()
     {
-        return $this->hasOne(produit::class);
+        return $this->belongsTo(commande::class,'idCommande');
     }
 
     public function produit()
     {
-        return $this->hasOne(produit::class);
+        return $this->belongsTo(produit::class,'codePro');
     }
 }
