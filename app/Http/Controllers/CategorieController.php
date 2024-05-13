@@ -19,7 +19,7 @@ class CategorieController extends Controller
             foreach ($categorie->produits as $produit) {
                 foreach ($produit->photos as $photo) {
                     // Générer le lien complet de la photo
-                    $photo->lienPhoto = url('photos_produits/' . basename($photo->lienPhoto));
+                    $photo->lienPhoto = asset('photos_produits/' . $photo->lienPhoto);
                 }
             }
         }
@@ -44,8 +44,13 @@ class CategorieController extends Controller
      */
     public function show($idCat)
     {
-        $categorie = Categorie::with('produits.photos')->find($idCat);
-
+        $categorie = Categorie::with('produits.photos')->findOrFail($idCat);
+        foreach ($categorie->produits as $produit) {
+            foreach ($produit->photos as $photo) {
+                // Générer le lien complet de la photo
+                $photo->lienPhoto = asset('photos_produits/' . $photo->lienPhoto);
+            }
+        }
         return response()->json($categorie);
     }
 

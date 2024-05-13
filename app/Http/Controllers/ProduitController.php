@@ -46,7 +46,7 @@ class ProduitController extends Controller
             "actif" => 'required|integer|between:0,1',
             "idCategorie" => 'required|integer|exists:categorie,idCat',
             "prixAchat" => 'required|integer|between:0,99999999',
-            "pourcentage" => 'required|numeric|between:0,100',
+            "pourcentage" => 'required|numeric|decimal:2,2',
             "promo" => 'sometimes|integer|in:0,1',
             "size1" => 'required|integer',
             "size2" => 'required|integer',
