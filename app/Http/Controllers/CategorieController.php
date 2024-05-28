@@ -60,7 +60,7 @@ class CategorieController extends Controller
      */
     public function update($idCat, Request $request)
     {
-        $categorie = categorie::findOrFail($idCat);
+        $categorie = Categorie::findOrFail($idCat);
         $fields = $request->validate([
             'nomCat' => 'sometimes|string|max:60'
         ]);

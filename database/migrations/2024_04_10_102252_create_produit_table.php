@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->string("codeArrivage",250);
             $table->tinyInteger("actif");
             $table->integer("idCategorie",unsigned: true);
-            $table->dateTime("dateInsertion")->default(now());
+            $table->dateTime("dateInsertion")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->decimal("prixAchat",8,0);
             $table->decimal("pourcentage",2,2);
             $table->tinyInteger("promo");

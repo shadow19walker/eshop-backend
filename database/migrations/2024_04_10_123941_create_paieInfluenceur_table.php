@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('paieInfluenceur', function (Blueprint $table) {
             $table->integer("idPaiement",true,true);
-            $table->dateTime("datePaie")->default(now());
+            $table->dateTime("datePaie")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->decimal("montant",10,2);
             $table->integer("idInf",unsigned: true);
             $table->tinyInteger("validite");

@@ -19,25 +19,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('achatfournisseur', AchatfournisseurController::class);
-Route::resource('categorie', CategorieController::class);
-Route::resource('clientcarte',ClientcarteController::class);
-Route::resource('commande',CommandeController::class);
-Route::resource('expedition',\App\Http\Controllers\ExpeditionController::class);
-Route::resource('facture', \App\Http\Controllers\FactureController::class);
-Route::resource('fournisseur', \App\Http\Controllers\FournisseurController::class);
-Route::resource('gestionnaire', \App\Http\Controllers\GestionnaireController::class);
-Route::resource('gestionstock',\App\Http\Controllers\GestionstockController::class);
-Route::resource('influenceur',\App\Http\Controllers\InfluenceurController::class);
-Route::resource('lignecarte',\App\Http\Controllers\LignecarteController::class);
-Route::resource('lignecommande',\App\Http\Controllers\LignecommandeController::class);
-Route::resource('lignefacture',\App\Http\Controllers\LignefactureController::class);
-Route::resource('messagerie',\App\Http\Controllers\MessagerieController::class);
-Route::resource('paieinfluenceur',\App\Http\Controllers\PaieinfluenceurController::class);
-Route::resource('photo',\App\Http\Controllers\PhotoController::class);
-Route::resource('produit', ProduitController::class);
-Route::resource('tontine',\App\Http\Controllers\TontineController::class);
-Route::resource('ville',\App\Http\Controllers\VilleController::class);
+Route::apiResource('achatfournisseur', AchatfournisseurController::class);
+Route::apiResource('categorie', CategorieController::class);
+Route::apiResource('clientcarte',ClientcarteController::class);
+Route::apiResource('commande',CommandeController::class);
+Route::apiResource('expedition',\App\Http\Controllers\ExpeditionController::class);
+Route::apiResource('facture', \App\Http\Controllers\FactureController::class);
+Route::apiResource('fournisseur', \App\Http\Controllers\FournisseurController::class);
+Route::apiResource('gestionnaire', \App\Http\Controllers\GestionnaireController::class);
+Route::apiResource('gestionstock',\App\Http\Controllers\GestionstockController::class);
+Route::apiResource('influenceur',\App\Http\Controllers\InfluenceurController::class);
+Route::apiResource('lignecarte',\App\Http\Controllers\LignecarteController::class);
+Route::apiResource('lignecommande',\App\Http\Controllers\LignecommandeController::class);
+Route::apiResource('lignefacture',\App\Http\Controllers\LignefactureController::class);
+Route::apiResource('messagerie',\App\Http\Controllers\MessagerieController::class);
+Route::apiResource('paieinfluenceur',\App\Http\Controllers\PaieinfluenceurController::class);
+Route::apiResource('photo',\App\Http\Controllers\PhotoController::class);
+Route::apiResource('produit', ProduitController::class);
+Route::apiResource('tontine',\App\Http\Controllers\TontineController::class);
+Route::apiResource('ville',\App\Http\Controllers\VilleController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->integer("idFac",unsigned: true);
             $table->integer("idCarte",unsigned: true);
             $table->integer("point",unsigned: true);
-            $table->dateTime("dateOpera")->default(now());
+            $table->dateTime("dateOpera")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->decimal("montantFac",10,2);
         });
     }

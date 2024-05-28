@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->string("pays",50);
             $table->string("mobile1",20);
             $table->string("mobile2",20);
-            $table->dateTime("dateCreation")->default(now());
+            $table->dateTime("dateCreation")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->tinyInteger("type");
         });
     }

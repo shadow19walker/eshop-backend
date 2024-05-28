@@ -39,14 +39,14 @@ class ProduitController extends Controller
     {
         $fields = $request->validate([
             "nomPro" => 'required|string|max:100',
-            "prix" => 'required|integer|between:0,99999999',
+            "prix" => 'required|numeric',
             "qte" => 'required|integer',
             "description" => 'sometimes|string|max:100',
             "codeArrivage" => 'required|string|max:250',
-            "actif" => 'required|integer|between:0,1',
+            "actif" => 'required|integer|in:0,1',
             "idCategorie" => 'required|integer|exists:categorie,idCat',
-            "prixAchat" => 'required|integer|between:0,99999999',
-            "pourcentage" => 'required|numeric|decimal:2,2',
+            "prixAchat" => 'required|numeric',
+            "pourcentage" => 'required|numeric',
             "promo" => 'sometimes|integer|in:0,1',
             "size1" => 'required|integer',
             "size2" => 'required|integer',
@@ -98,20 +98,22 @@ class ProduitController extends Controller
             "size1" => 'sometimes|integer',
             "size2" => 'sometimes|integer',
             "typeSize" => 'sometimes|integer',
-            'photos' => 'sometimes|array',
+            'photos' => 'array',
             'photos.*' => 'image|max:4096'
         ]);
 
         $produit->update($fields);
 
-        foreach ($fields['photos'] as $photo){
-            if (!isset($photo->idPhoto)) {
-                $photoName = date('d-m-Y-H-i-s') . '_' . $fields['codePro'] . '_' . $photo->getClientOriginalExtension();
-                $photo->move('photos_produits/', $photoName);
-                photo::create([
-                    'lienPhoto' => $photoName,
-                    'codePro' => $produit->codePro
-                ]);
+        if (isset($fields['photos'])) {
+            foreach ($fields['photos'] as $photo) {
+                if (!isset($photo->idPhoto)) {
+                    $photoName = date('d-m-Y-H-i-s') . '_' . $fields['codePro'] . '_' . $photo->getClientOriginalExtension();
+                    $photo->move('photos_produits/', $photoName);
+                    photo::create([
+                        'lienPhoto' => $photoName,
+                        'codePro' => $produit->codePro
+                    ]);
+                }
             }
         }
 

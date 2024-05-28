@@ -28,7 +28,7 @@ class ClientcarteController extends Controller
             "mobile" => 'required|string|max:15',
             "whatsapp" => 'required|in:0,1',
             "point" => 'required|numeric|min:0',
-            "montantTontine" => 'required|numeric|decimal:8,2',
+            "montantTontine" => 'sometimes|numeric|decimal:8,2',
         ]);
 
         return response()->json(clientCarte::create($fields),201);

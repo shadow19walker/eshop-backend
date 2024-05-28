@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,7 +16,7 @@ return new class extends Migration
             $table->integer("idmsg",true,true);
             $table->string("mobile",20);
             $table->text("wsms");
-            $table->dateTime("dateEnvoie")->default(now());
+            $table->dateTime("dateEnvoie")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->integer("type");
             $table->integer("service");
         });

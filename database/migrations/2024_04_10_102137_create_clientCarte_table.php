@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer("idVille",unsigned: true);
             $table->string("mobile",15);
             $table->tinyInteger("whatsapp");
-            $table->timestamp("creation");
+            $table->timestamp("creation")->useCurrent();
             $table->integer("point",unsigned: true);
             $table->decimal("montantTontine");
         });

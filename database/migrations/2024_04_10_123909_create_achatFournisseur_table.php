@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,7 +15,7 @@ return new class extends Migration
         Schema::create('achatFournisseur', function (Blueprint $table) {
             $table->integer("idAchat",true,true);
             $table->string("lienFac",250);
-            $table->dateTime("dateInsertion")->default(now());
+            $table->dateTime("dateInsertion")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->decimal("montantFac",10,2);
             $table->decimal("montantCargo",10,2);
             $table->decimal("totalKg",8,2);
